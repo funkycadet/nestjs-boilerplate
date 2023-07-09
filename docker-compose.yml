@@ -1,4 +1,4 @@
-version: '3'
+version: '3.7'
 
 services:
   api:
@@ -17,12 +17,12 @@ services:
       - 3000:3000
     depends_on:
       - postgres
-    links:
-      - postgres:postgres
+    # links:
+    #   - postgres:postgres
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules
-    command: npm run dev
+    # command: npm run dev
 
   postgres:
     image: postgres:alpine
@@ -36,6 +36,3 @@ services:
     restart: always
     ports:
       - 8080:8080
-
-
-
